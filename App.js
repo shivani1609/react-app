@@ -1,15 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const heading = React.createElement("h1", 
-    {
-        "id": "heading",
-        "className": "head",
-        "name": "shivani"
-    }, 
-    "Hello World React..!!"
-);
+// JSX => Babel Transpiler => React.createElement() => React Element- JS Object => React DOM; HTMLRenderer => HTML Element => Browser DOM
+const jsxHeading = <h1 id="title">Hello React JSX</h1>;
 
-console.log(heading);
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(heading);
+root.render(jsxHeading);
