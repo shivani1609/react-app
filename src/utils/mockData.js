@@ -1,58 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-// JSX => Babel Transpiler => React.createElement() => React Element- JS Object => React DOM; HTMLRenderer => HTML Element => Browser DOM
-// React Element is a JS Object which is used to create HTML Element in the Browser DOM using ReactDOM.render() method.
-const Title = () => (
-    <h1 id="title" className="heading">
-        Hello React JSX
-    </h1>
-);
-
-// React Functional Component is a JS Function which returns React Element(JS Object) and it is used to create HTML Element in the Browser DOM using ReactDOM.render() method.
-const HeadingComponent = () => (
-    <div>
-         {/* Component Composition - A component can be used inside another component. */}
-        <Title />
-        <h1>Heading Component</h1>
-        <p>This is a paragraph inside the heading component.</p>
-    </div>
-);
-
-
-
-// food Application Code
-const HeaderComponent = () => (
-    <div className="header">
-        <div className="logo-container">
-            <img className="logo" src="https://i.pinimg.com/474x/59/5f/a5/595fa5ffb3d67f62ceabaa0d9a40d1e2.jpg" alt="Logo" />
-        </div>
-        <div className="nav-items">
-            <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Contact</li>
-                <li>Cart</li>
-            </ul>
-        </div>
-    </div>
-);
-
-const RestaurantCard = (props) => {
-    const { resData } = props;
-    const { name, cuisines, avgRating, sla, cloudinaryImageId } = resData.info;
-
-    return (
-        <div className="restaurant-card" style={{ backgroundColor: "#f0f0f0", padding: "10px", margin: "10px", borderRadius: "5px" }}>
-            <img className="restaurant-image" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId} alt="Restaurant" />
-            <h2 className="restaurant-name">{name}</h2>
-            <p className="restaurant-cuisine">{cuisines.join(", ")}</p>
-            <p className="restaurant-rating">{avgRating} ⭐</p>
-            <p className="restaurant-delivery-time">{sla.deliveryTime} mins </p>
-        </div>
-    )
-} 
-
 const restaurantsList = [
         {
         "info": {
@@ -1699,28 +1644,4 @@ const restaurantsList = [
         }
     ];
 
-
-const BodyComponent = () =>  (
-    <div className="body">
-        <div className="search">
-            search
-        </div>
-        <div className="restaurant-list">
-            {
-                restaurantsList.map((restaurant) => (
-                    <RestaurantCard key={restaurant.info.id} resData={restaurant} />
-                ))
-            }
-        </div>
-    </div>
-);
-
-const AppLayoutComponent = () => (
-    <div className="app">
-        <HeaderComponent />
-        <BodyComponent />
-    </div>
-);
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayoutComponent />);
+export default restaurantsList;

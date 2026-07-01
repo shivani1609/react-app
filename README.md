@@ -19,3 +19,9 @@
 - Error handling
 - https
 - Different build/bundle for dev and production
+
+
+
+# Two types of Export/ Import
+- default Export Component -> import Compoent from Path
+- Named Export/import -> Export const Component -> Import {component} from path
