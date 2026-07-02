@@ -25,3 +25,10 @@
 # Two types of Export/ Import
 - default Export Component -> import Compoent from Path
 - Named Export/import -> Export const Component -> Import {component} from path
+
+
+# React Hooks
+
+-  Normal JS Utility Functions/ React Hooks
+-  useState() - superpowerful react variable
+- useEffect()
