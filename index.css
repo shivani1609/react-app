@@ -22,8 +22,9 @@
     padding-right: 20px;
 }
 
-.search {
-    padding: 10px;
+.filter {
+    display: flex;
+    margin-top: 20px;
 }
 
 .restaurant-list {
@@ -76,4 +77,54 @@
     border-radius: 8px;
     overflow: hidden;
     position: relative;
+}
+
+.login {
+    background-color: #ff6347;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+.search {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.search-box {
+    padding: 10px;
+    width: 200px;
+    border: none;
+}
+
+.search-btn {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.clear-btn {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.no-results {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+    color: #ff6347;
 }
