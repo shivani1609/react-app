@@ -10,7 +10,7 @@ import Error from "./components/Error";
 const AppLayoutComponent = () => (
     <div className="app">
         <Header />
-        <Body />
+        <Outlet />
     </div>
 );
 
@@ -19,16 +19,20 @@ const appRouter = createBrowserRouter([
         "path": "/",
         "element": <AppLayoutComponent />,
         errorElement: <Error />,
-    },
-    {
-        "path": "/about",
-        "element": <About />,
-        errorElement: <Error />,
-    },
-    {
-        "path": "/contact",
-        "element": <Contact />,
-        errorElement: <Error />
+        children: [
+            {
+                path: "/",
+                element: <Body />,
+            },
+            {
+                "path": "/about",
+                "element": <About />,
+            },
+            {
+                "path": "/contact",
+                "element": <Contact />,
+            }
+        ]
     }
 ])
 
