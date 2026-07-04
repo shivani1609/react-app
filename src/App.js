@@ -2,6 +2,31 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import About from "./components/About";
+import Contact from "./components/Contact";
+
+const AppLayoutComponent = () => (
+    <div className="app">
+        <Header />
+        <Body />
+    </div>
+);
+
+const appRouter = createBrowserRouter([
+    {
+        "path": "/",
+        "element": <AppLayoutComponent />,
+    },
+    {
+        "path": "/about",
+        "element": <About />,
+    },
+    {
+        "path": "/contact",
+        "element": <Contact />
+    }
+])
 
 
 // JSX => Babel Transpiler => React.createElement() => React Element- JS Object => React DOM; HTMLRenderer => HTML Element => Browser DOM
@@ -22,12 +47,7 @@ const HeadingComponent = () => (
     </div>
 );
 
-const AppLayoutComponent = () => (
-    <div className="app">
-        <Header />
-        <Body />
-    </div>
-);
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayoutComponent />);
+root.render(<RouterProvider router={appRouter} />);
