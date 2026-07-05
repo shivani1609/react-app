@@ -32,3 +32,9 @@
 -  Normal JS Utility Functions/ React Hooks
 -  useState() - superpowerful react variable
 - useEffect()
+
+
+# 2 Routing types
+- Client Side Routing
+- Server Side Routing
+
