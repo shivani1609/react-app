@@ -1,8 +1,12 @@
+import User from "./User";
+
 const About = () => {
     return (
-        <h1>
-            About US Page
-        </h1>
+        <div>
+            <h1>About Component</h1>
+            <p>This is the about component of the application.</p>
+            <User />
+        </div>
     );
 }
 
