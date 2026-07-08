@@ -38,3 +38,5 @@
 - Client Side Routing
 - Server Side Routing
 
+# Learn class based component
+
