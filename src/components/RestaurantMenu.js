@@ -2,21 +2,13 @@ import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import { MENU_API_URL, MENU_CDN_URL } from "../utils/constant";
-import mockMenu from "../utils/mockMenu";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
     const { resId } = useParams();
-    const [restaurantMenu, setRestaurantMenu] = useState(null);
+    const restaurantMenu = useRestaurantMenu(resId);
 
-    useEffect(() => {
-        fetchRestaurantMenu();
-    }, []);
-
-    const fetchRestaurantMenu = async () => {
-        console.log("Restaurant Menu:", mockMenu?.data?.cards[4]?.groupedCard.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards);
-        setRestaurantMenu(mockMenu?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards);
-    };
-
+    
     if(restaurantMenu === null) {
         return <Shimmer />
     }
@@ -39,7 +31,6 @@ const RestaurantMenu = () => {
                     </div>
                 ))
             }
-            
         </div>
     )
 }
