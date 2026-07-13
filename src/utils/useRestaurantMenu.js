@@ -9,8 +9,9 @@ const useRestaurantMenu = (resId) => {
     }, []);
 
     const fetchRestaurantMenu = async () => {
-        console.log("Restaurant Menu:", mockMenu?.data?.cards[4]?.groupedCard.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards);
-        setRestaurantMenu(mockMenu?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards);
+        // console.log("Fetching mockMenu:", mockMenu?.data);
+        setRestaurantMenu(mockMenu?.data);
+        // setRestaurantMenu(mockMenu?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards);
     }
 
     return restaurantMenu;
